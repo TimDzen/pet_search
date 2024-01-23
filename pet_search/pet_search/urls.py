@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from pet.views import all_animal, animal_detail
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('animals/', all_animal),
+    path('animal/<int:animal_id>/', animal_detail),
 ]
