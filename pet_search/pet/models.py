@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import forms
 
 
 class Animal(models.Model):
@@ -8,6 +9,7 @@ class Animal(models.Model):
     gender = models.CharField(max_length=20)
     color = models.CharField(max_length=20)
     location = models.CharField(max_length=255)
-    owner_contact = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255)
     lost = models.BooleanField(default=True)
+
 
