@@ -3,11 +3,11 @@
 {% block title %}All Animals{% endblock %}
 
 {% block content %}
-    <h1>All Animals</h1>
+    <h1>Животные</h1>
     <ul>
         {% for animal in animals %}
         <li>
-        <a href="/animals/{{ animal.id }}/">{{ animal.name }} </a> - {{ animal.species }} {{ animal.age }} years old
+        <a href="/animal/{{ animal.id }}/">{{ animal.name }} </a> - {{ animal.species }}, возраст - {{ animal.age }}
         </li>
         {% endfor %}
     </ul>

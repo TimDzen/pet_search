@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ animal.name }}</h1>
+  <p>Вид: {{ animal.species }}</p>
+  <p>Возраст: {{ animal.age }}</p>
+  <p>Описание: {{ animal.description }}</p>
+  <p>Местоположение: {{ animal.location }}</p>
+  <p>Найден: {% if animal.available %}Yes{% else %}No{% endif %}</p>
+{% endblock %}
