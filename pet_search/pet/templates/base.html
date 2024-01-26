@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Pet Search</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/animals/">Животные</a></li>
+            <li><a href="/add_animal/">Добавить животное</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; PetSearch</p>
+    </footer>
+</body>
+</html>
