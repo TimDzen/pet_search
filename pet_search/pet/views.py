@@ -9,7 +9,7 @@ def all_animal(request):
     return render(request, 'all_animals.html', {'animals':animals })
 
 def animal_detail(request):
-    animal = Animal.objects.get(pk = animal_id)
+    animal = Animal.objects.get(pk = 'animal_id')
     return render(request, 'animal_detail.html', {'animal': animal})
 
 def add_animal(request):
@@ -21,3 +21,8 @@ def add_animal(request):
         form = AnimalForm()
 
     return render(request, 'add_animal.html', {'form': form})
+
+
+def home(request):
+    animals = Animal.objects.all()
+    return render(request, 'home.html', {'animals': animals})
