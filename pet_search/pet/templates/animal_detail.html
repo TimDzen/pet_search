@@ -8,4 +8,11 @@
   <p>Описание: {{ animal.description }}</p>
   <p>Местоположение: {{ animal.location }}</p>
   <p>Найден: {% if animal.available %}Yes{% else %}No{% endif %}</p>
+  <p>Телефон: {{ animal.phone }}</p>
+  {% if animal.photo %}
+  <img src="{{ animal.photo.url }}" alt="{{ animal.name }}">
+{% else %}
+  <p>Фото отсутствует</p>
+{% endif %}
+
 {% endblock %}

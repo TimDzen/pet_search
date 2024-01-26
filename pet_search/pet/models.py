@@ -15,7 +15,7 @@ class Animal(models.Model):
     location = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     lost = models.BooleanField(default=True)
-    photo = models.ImageField(upload_to='animal_photos/', default=None, blank=True, null=True)
+    photo = models.ImageField(upload_to='images/', default=None, blank=True, null=True)
 
 
 
