@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-    <header>
-        <h1>Pet Search</h1>
-    </header>
+{% extends 'base.html' %}
 
-    <nav>
-        <ul>
-            <li><a href="/animals/">Животные</a></li>
-            <li><a href="/add_animal/">Добавить животное</a></li>
-        </ul>
-    </nav>
+{% block content %}
+<h1>{{title}}</h1>
+<ul>
+    {% for a in animals %}
+    <li>
+        <h2>{{a.name}}</h2>
+        <p>{{a.phone}}</p>
+        <p>{{a.species}}</p>
+        <p>{{a.owner_id}}</p>
+        {% if a.photo %}
+	<p><img class="img-article-left thumb" src="{{a.photo.url}}"></p>
+        {% endif %}
+        <hr>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; PetSearch</p>
-    </footer>
-</body>
-</html>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
