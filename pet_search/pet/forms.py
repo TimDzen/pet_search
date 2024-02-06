@@ -13,8 +13,7 @@ class AnimalForm(forms.ModelForm):
 class RegisterForm(UserCreationForm):
     username = forms.CharField(label='Логин')
     email = forms.EmailField(label='Email')
-    password = forms.CharField(label='Пароль')
-    password2 = forms.CharField(label="Повтор пароля")
+
     class Meta:
         model = User
-        fields = ['username','email', 'password', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
