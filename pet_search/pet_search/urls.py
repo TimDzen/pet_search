@@ -18,16 +18,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from pet.views import all_animal, animal_detail, add_animal, home
+from pet.views import all_animal, animal_detail , home, about
+
+from pet.views import Add_animal, RegisterUser,LoginUser
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('animals/', all_animal, name='all_animal'),
     path('animal/<int:animal_id>/', animal_detail),
-    path('add_animal/', add_animal, name='add_animal'),
+    path('add_animal/', Add_animal.as_view(), name='add_animal'),
     path('', home, name='home'),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('login/', LoginUser.as_view(), name='login'),
+    path('register/', RegisterUser.as_view(), name='register'),
+    path('about/', about, name = 'about')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

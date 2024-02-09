@@ -1,18 +1,29 @@
-{% extends 'home.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
+
   <h1>{{ animal.name }}</h1>
-  <p>Номер:{{animal_id }}</p>
-  <p>Вид: {{ animal.species }}</p>
-  <p>Возраст: {{ animal.age }}</p>
-  <p>Описание: {{ animal.description }}</p>
-  <p>Местоположение: {{ animal.location }}</p>
-  <p>Найден: {% if animal.available %}Yes{% else %}No{% endif %}</p>
-  <p>Телефон: {{ animal.phone }}</p>
-  {% if animal.photo %}
-  <img src="{{ animal.photo.url }}" alt="{{ animal.name }}">
-{% else %}
-  <p>Фото отсутствует</p>
-{% endif %}
+  <div style="flex: 1; font-size: 20px;">
+  <div style="display: flex; align-items: center;"> <!-- Используем flexbox для выравнивания содержимого -->
+    <div style="flex: 1;">
+      <!-- Создаем гибкую область для описания -->
+      <p>Вид: {{ animal.species }}</p>
+      <p>Возраст: {{ animal.age }}</p>
+      <p>Местоположение: {{ animal.location }}</p>
+      <p>Найден: {% if animal.available %}Да{% else %}Нет{% endif %}</p>
+      <p>Телефон: {{ animal.phone }}</p>
+    </div>
+    {% if animal.photo %}
+    <div style="flex: 1;"> <!-- Создаем гибкую область для фотографии -->
+      <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" style="max-width: 600px; max-height: 500px;"> <!-- Устанавливаем максимальные размеры фотографии -->
+    </div>
+    {% else %}
+    <div style="flex: 1;"> <!-- Создаем пустую гибкую область, если фото отсутствует -->
+      <p>Фото отсутствует</p>
+    </div>
+    {% endif %}
+  </div>
 
 {% endblock %}
+
+  </div>
