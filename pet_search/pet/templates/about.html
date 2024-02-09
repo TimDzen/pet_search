@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+<style>
+.logo {
+  display: block;
+  width: 200px; /* задайте нужную ширину */
+  height: auto; /* автоматический расчет высоты */
+  margin: 20px auto; /* задайте нужные отступы */
+}
+</style>
+
+<a href="/">
+  <img class="logo" src="/media/images/logo.png" alt="Логотип">
+</a>
 <h1>{{title}}</h1>
 <p> О сайте</p>
 {% endblock %}
