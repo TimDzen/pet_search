@@ -9,9 +9,9 @@ from django.views.generic import CreateView
 from .forms import AnimalForm, RegisterForm
 from .models import Animal
 
-menu = [{'title': 'О сайте', 'url_name': 'about'},
+menu = [{'title': "Добавить объявление", 'url_name': 'add_animal'},
         {'title': "Все животные", 'url_name': 'all_animal'},
-        {'title': "Добавить объявление", 'url_name': 'add_animal'},
+        {'title': 'О сайте', 'url_name': 'about'},
 
         ]
 
@@ -78,6 +78,7 @@ class RegisterUser(CreateView):
 class LoginUser(LoginView):
     form_class = AuthenticationForm
     template_name = 'login.html'
+    success_url = reverse_lazy('home')
 
     def get_context_data(self,*,object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

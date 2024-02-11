@@ -3,13 +3,16 @@
 {% block title %}All Animals{% endblock %}
 
 {% block content %}
-    <h1>Животные</h1>
+    <h1>Все животные</h1>
     <ul style="list-style-type: none; padding: 0; display: flex; flex-wrap: wrap;">
-        {% for animal in animals reversed %}
-        <li style="flex-basis: calc(25% - 20px); margin: 5px; font-size: 20px;"> <!-- Увеличение шрифта -->
-            <a href="/animal/{{ animal.id }}/"><span style="font-size: 20px;">{{ animal.name }}</span></a> - {{ animal.species }}, возраст - {{ animal.age }}
+        {% for animal in animals  %}
+        <li style="flex-basis: calc(25% - 50px); margin: 10px; font-size: 25px;">
+            <a href="/animal/{{ animal.id }}/"><span style="font-size: 30px; padding: 10px;">{{ animal.name }}</span></a>
+            <p>{{ animal.species }}
+            </p>
+            возраст - {{ animal.age }}
             {% if animal.photo %}
-            <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" style="max-width: 100px; max-height: 100px; margin-left: 10px;">
+            <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" style="max-width: 200px; max-height: 100px; margin-left: 25px;">
             {% else %}
             <p>Фото отсутствует</p>
             {% endif %}

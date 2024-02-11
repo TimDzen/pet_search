@@ -1,0 +1,61 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для горизонтального меню */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #555;
+}
+
+li {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #123;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Стили для логотипа */
+.logo {
+    float: left; /* Выравниваем логотип в левом углу */
+    margin-right: 20px; /* Отступ справа для логотипа */
+    margin-top: -3px; /* Отступ сверху для логотипа */
+}
+
+.logo img {
+    max-height: 35px; /* Максимальная высота логотипа */
+}

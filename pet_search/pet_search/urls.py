@@ -32,7 +32,8 @@ urlpatterns = [
     path('', home, name='home'),
     path('login/', LoginUser.as_view(), name='login'),
     path('register/', RegisterUser.as_view(), name='register'),
-    path('about/', about, name = 'about')
+    path('about/', about, name = 'about'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
