@@ -74,6 +74,26 @@ li a {
 
 .button:hover {
     background-color: #D7B3B3;
+
+}
+/* Стили для кнопок */
+.button1 {
+    background-color: #6E88B4;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px; /* Добавляем немного отступа между кнопками */
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Центрирование кнопок */
+.center-buttons {
+    text-align: center;
 }
 /* Общие стили */
 body {
@@ -142,3 +162,5 @@ h1 {
 .animal-photo:hover {
     transform: scale(1.5); /* Увеличиваем размер на 50% */
 }
+h2 {
+    text-align: center;}
