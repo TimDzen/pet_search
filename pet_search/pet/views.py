@@ -9,7 +9,8 @@ from django.views.generic import CreateView
 from .forms import AnimalForm, RegisterForm
 from .models import Animal
 
-menu = [{'title': "Добавить объявление", 'url_name': 'add_animal'},
+menu = [{'title': "На Главную", 'url_name': 'home'},
+        {'title': "Добавить объявление", 'url_name': 'add_animal'},
         {'title': "Все животные", 'url_name': 'all_animal'},
         {'title': 'О сайте', 'url_name': 'about'},
 
@@ -28,7 +29,7 @@ def animal_detail(request, animal_id):
 class Add_animal(CreateView):
     form_class = AnimalForm
     template_name = 'add_animal.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('all_animal')
 
     def get_context_data(self,*,object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

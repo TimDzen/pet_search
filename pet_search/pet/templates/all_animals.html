@@ -16,7 +16,9 @@
                     Возраст: {{ animal.age }}
                 </p>
                 {% if animal.photo %}
-                    <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" class="animal-photo">
+                    <a href="/animal/{{ animal.id }}/">
+                        <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" class="animal-photo">
+                    </a>
                 {% else %}
                     <p class="no-photo">Фото отсутствует</p>
                 {% endif %}
