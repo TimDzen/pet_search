@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background: #D3E5FD
 }
 
 /* Стили для горизонтального меню */
@@ -10,7 +11,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #555;
+    background-color: #6E88B4;
 }
 
 li {
@@ -29,9 +30,6 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #123;
-}
 
 .container {
     width: 80%;
@@ -42,7 +40,7 @@ li a:hover {
 .content {
     width: 100%;
     margin-top: 20px;
-    background-color: #f2f2f2;
+    background-color: #EAEAEA;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -58,4 +56,89 @@ li a:hover {
 
 .logo img {
     max-height: 35px; /* Максимальная высота логотипа */
+}
+.button {
+    background-color: #6E88B4;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #D7B3B3;
+}
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #D3E5FD;
+}
+
+/* Стили для заголовка */
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Стили для контейнера животных */
+.animal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Стили для элемента списка животных */
+.animal-item {
+    flex-basis: calc(25% - 50px);
+    margin: 10px;
+    font-size: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #EAEAEA;
+}
+
+/* Стили для имени животного */
+.animal-name {
+    font-size: 25px;
+    padding: 0px;
+    color: black;
+}
+
+/* Стили для деталей животного */
+.animal-details {
+    font-size: 16px;
+}
+
+/* Стили для фото животного */
+.animal-photo {
+    max-width: 200px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Стили для фото животного */
+.animal-photo {
+    max-width: 200px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Добавляем переход для свойства transform */
+}
+
+/* Стили для увеличения изображения при наведении */
+.animal-photo:hover {
+    transform: scale(1.5); /* Увеличиваем размер на 50% */
 }

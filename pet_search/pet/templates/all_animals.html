@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}All Animals{% endblock %}
 
 {% block content %}
     <h1>Все животные</h1>
-    <ul style="list-style-type: none; padding: 0; display: flex; flex-wrap: wrap;">
-        {% for animal in animals  %}
-        <li style="flex-basis: calc(25% - 50px); margin: 10px; font-size: 25px;">
-            <a href="/animal/{{ animal.id }}/"><span style="font-size: 30px; padding: 10px;">{{ animal.name }}</span></a>
-            <p>{{ animal.species }}
-            </p>
-            возраст - {{ animal.age }}
-            {% if animal.photo %}
-            <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" style="max-width: 200px; max-height: 100px; margin-left: 25px;">
-            {% else %}
-            <p>Фото отсутствует</p>
-            {% endif %}
-        </li>
+    <div class="animal-container">
+        {% for animal in animals %}
+            <div class="animal-item">
+                <a href="/animal/{{ animal.id }}/">
+                    <span class="animal-name">{{ animal.name }}</span>
+                </a>
+                <p class="animal-details">
+                    {{ animal.species }} <br>
+                    Возраст: {{ animal.age }}
+                </p>
+                {% if animal.photo %}
+                    <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" class="animal-photo">
+                {% else %}
+                    <p class="no-photo">Фото отсутствует</p>
+                {% endif %}
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
