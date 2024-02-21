@@ -1,7 +1,8 @@
-
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-
+from django.contrib.auth import logout
+from django.contrib.auth.forms import  AuthenticationForm
+from django.urls import reverse
 from django.contrib.auth.views import LoginView
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -19,7 +20,7 @@ menu = [{'title': "На Главную", 'url_name': 'home'},
 
 def all_animal(request):
     animals = Animal.objects.all()
-    return render(request, 'all_animals.html', {'menu': menu,'animals':animals})
+    return render(request, 'all_animals.html', {'menu': menu,'animals':animals, 'title': 'Все объявления'})
 
 def animal_detail(request, animal_id):
     animal = get_object_or_404(Animal, pk=animal_id)
@@ -86,3 +87,7 @@ class LoginUser(LoginView):
         context['title'] = 'Авторизация'
         context['menu'] = menu
         return context
+
+def custom_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
