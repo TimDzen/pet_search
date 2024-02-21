@@ -1,5 +1,7 @@
 from django.contrib.auth import logout
+
 from django.contrib.auth.forms import  AuthenticationForm
+
 from django.urls import reverse
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
@@ -27,10 +29,12 @@ def animal_detail(request, animal_id):
     return render(request, 'animal_detail.html', {'menu': menu,'animal': animal})
 
 
+
 class Add_animal(CreateView):
     form_class = AnimalForm
     template_name = 'add_animal.html'
     success_url = reverse_lazy('all_animal')
+
 
     def get_context_data(self,*,object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -38,25 +42,13 @@ class Add_animal(CreateView):
         context['menu'] = menu
         return context
 
-#@login_required
-# def add_animal(request):
-#     if request.method == 'POST':
-#         form = AnimalForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             animal = form.save(commit=False)
-#             animal.owner = request.user
-#             animal.save()
-#     else:
-#         form = AnimalForm()
-#
-#     return render(request, 'add_animal.html', {'menu': menu,'form': form, 'title': 'Добавить объявление'})
-
-
 def home(request):
     animals = Animal.objects.all()
     context = {'menu': menu,
                'title': 'Главная',
-               'animals': animals
+               'animals': animals,
+               'user': request.user,
+
 
     }
     return render(request, 'home.html', context=context)

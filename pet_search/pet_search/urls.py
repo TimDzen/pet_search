@@ -37,5 +37,8 @@ urlpatterns = [
 
 
 ]
+
+admin.site.site_header = 'Админ панель'
+admin.site.index_title = 'Поиск домашних животных'
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
