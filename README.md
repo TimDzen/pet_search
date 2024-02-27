@@ -10,7 +10,7 @@
 
 1. Клонировать репозиторий:
  ```
-  git clone https://github.com/ваш_проект.git
+  git clone https://github.com/pet_search.git
 ```
 3. Установить зависимости:
 ```
