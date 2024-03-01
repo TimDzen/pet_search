@@ -1,0 +1,4 @@
+создание контейнера на основе докер образа:
+docker build --tag pet_search .     
+запуск контейнера 
+docker run -p 8080:8080 --name petsearch_container pet_search_image 
