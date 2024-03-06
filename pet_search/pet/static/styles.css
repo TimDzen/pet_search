@@ -1,12 +1,20 @@
 /* Общие стили */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #D3E5FD
 }
 
-/* Стили для горизонтального меню */
 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Стили для горизонтального меню */
+.header {
     list-style-type: none;
     margin: 0;
     padding: 0;

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 
 {% block content %}
 <h1>{{ title }}</h1>
@@ -7,5 +8,10 @@
     {{ form.as_p }}
     <button type="submit">Войти</button>
 </form>
-
+<p>
+Войти с помощью соцсетей:
+<p>
+<a href="{% provider_login_url 'google' %}"><img src="/media/images/google-144.png" width="60" height="60"/></a>
+<a href="{% provider_login_url 'odnoklassniki' %}"> <img src="/media/images/ok-94.png" width="60" height="60"/></a>
+<a href="{% provider_login_url 'vk' %}"> <img src="/media/images/vk-94.png" width="60" height="60"/></a>
 {% endblock %}

@@ -9,7 +9,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from .forms import AnimalForm, RegisterForm
+from .forms import AnimalForm, RegisterForm, MyCustomLoginForm
 from .models import Animal
 
 menu = [{'title': "На Главную", 'url_name': 'home'},
@@ -68,9 +68,8 @@ class RegisterUser(CreateView):
         context['menu'] = menu
         return context
 
-
 class LoginUser(LoginView):
-    form_class = AuthenticationForm
+    form_class = MyCustomLoginForm
     template_name = 'login.html'
     success_url = reverse_lazy('home')
 
@@ -83,3 +82,5 @@ class LoginUser(LoginView):
 def custom_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
+
+

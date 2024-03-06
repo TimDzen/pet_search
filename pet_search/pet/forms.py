@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from allauth.account.forms import LoginForm
 
 from .models import Animal
 
@@ -17,3 +18,9 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+       
+class MyCustomLoginForm(LoginForm):
+    def login(self, *args, **kwargs):
+        
+        return super(MyCustomLoginForm, self).login(*args, **kwargs)
