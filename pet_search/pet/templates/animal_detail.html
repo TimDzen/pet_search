@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>{{ animal.name }}</h1>
+  <div class="content-container">
+    <div class="animal-info"> <!-- Создаем контейнер для информации о животном -->
+      <div class="animal-photo1">
+        {% if animal.photo %}
+          <img src="{{ animal.photo.url }}" alt="{{ animal.name }}">
+        {% else %}
+          <p>Фото отсутствует</p>
+        {% endif %}
+      </div>
+      <div class="animal-description">
+        <p>Вид: {{ animal.species }}</p>
+        <p>Возраст: {{ animal.age }}</p>
+        <p>Местоположение: {{ animal.location }}</p>
+        <p>Статус: {{ animal.lost }}</p>
+        <p>Телефон: {{ animal.phone }}</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}All Animals{% endblock %}
+
+{% block content %}
+    <h1>Все животные</h1>
+    <div class="animal-container">
+        {% for animal in animals %}
+            <div class="animal-item">
+                <a href="/animal/{{ animal.id }}/">
+                    <span class="animal-name">{{ animal.name }}</span>
+                </a>
+                <p class="animal-details">
+                    {{ animal.species }} <br>
+                    Возраст: {{ animal.age }}
+                </p>
+                {% if animal.photo %}
+                    <a href="/animal/{{ animal.id }}/">
+                        <img src="{{ animal.photo.url }}" alt="{{ animal.name }}" class="animal-photo">
+                    </a>
+                {% else %}
+                    <p class="no-photo">Фото отсутствует</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
