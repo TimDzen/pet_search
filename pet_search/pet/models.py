@@ -18,10 +18,10 @@ def validate_phone_number(value):
             _('Номер телефона не может быть длиннее 11 символов.'),
             params={'value': value},
         )
-    raise ValidationError(
-        '<span style="color: red;">Номер телефона должен содержать только цифры и быть не более 11 символов.</span>',
-        code='invalid',
-    )
+    # raise ValidationError(
+    #     '<span style="color: red;">Номер телефона должен содержать только цифры и быть не более 11 символов.</span>',
+    #     code='invalid',
+    # )
 class Animal(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, verbose_name='Кличка', null=True)

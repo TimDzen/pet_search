@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <h1>{{title}}</h1>
-<p> О сайте</p>
+<p>Ссылки на нас:</p>
+<p>
+    <span style="display: inline-block; vertical-align: middle;">наш телеграм:</span>
+    <a href="https://t.me/TimDzen" style="text-decoration: none;">
+        <span style="display: inline-block; vertical-align: middle; margin-right: 5px;">
+            <img src="{% static 'telegram.png' %}" alt="Telegram Icon" style="width: 20px; height: 20px;">
+        </span>
+    </a>
+</p><span style="display: inline-block; vertical-align: middle;">Наш GitHub:</span>
+    <a href="https://github.com/TimDzen/pet_search" style="text-decoration: none;">
+        <span style="display: inline-block; vertical-align: middle; margin-right: 5px;">
+            <img src="{% static 'github.png' %}" alt="GitHub Icon" style="width: 20px; height: 20px;">
+        </span>
+    </a>
 {% endblock %}

@@ -15,7 +15,7 @@ from .models import Animal
 menu = [{'title': "На Главную", 'url_name': 'home'},
         {'title': "Добавить объявление", 'url_name': 'add_animal'},
         {'title': "Все животные", 'url_name': 'all_animal'},
-        {'title': 'О сайте', 'url_name': 'about'},
+        {'title': 'Связаться с нами', 'url_name': 'about'},
 
         ]
 
@@ -55,7 +55,7 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'about.html', {'menu': menu, 'title': 'О сайте'})
+    return render(request, 'about.html', {'menu': menu, 'title': 'Контакты'})
 
 
 class RegisterUser(CreateView):
